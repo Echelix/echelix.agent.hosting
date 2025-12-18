@@ -81,7 +81,7 @@ Modern, modular Bicep templates for deploying enterprise-grade Azure infrastruct
 - **Networking**: Virtual networks, subnets, NSGs, and private endpoints
 - **Compute**: Azure Kubernetes Service (AKS) with managed identity integration
 - **Security**: Azure Key Vault, managed identities, and secure secret management
-- **Observability**: Application Insights, Log Analytics, and monitoring dashboards 
+- **Observability**: Application Insights, Log Analytics, and monitoring dashboards
 
 **Key Resources:**
 
@@ -188,7 +188,7 @@ az provider show --namespace Microsoft.CognitiveServices --query "resourceTypes[
 ### 🚀 Deployment Guides
 
 - [Infrastructure Deployment](iac/azure/bicep/README.md)
-- [AI Platform Services](iac/azure/bicep/deployment/ai-platform/README.md) 
+- [AI Platform Services](iac/azure/bicep/deployment/ai-platform/README.md)
 
 ### 🔧 Technical References
 
