@@ -188,9 +188,7 @@ az provider show --namespace Microsoft.CognitiveServices --query "resourceTypes[
 ### 🚀 Deployment Guides
 
 - [Infrastructure Deployment](iac/azure/bicep/README.md)
-- [AI Platform Services](iac/azure/bicep/deployment/ai-platform/README.md)
-- [NGINX Ingress Setup](iac/azure/bicep/deployment/nginx-ingress/README.md)
-- [DNS Configuration](iac/azure/bicep/deployment/dns/README.md)
+- [AI Platform Services](iac/azure/bicep/deployment/ai-platform/README.md) 
 
 ### 🔧 Technical References
 
