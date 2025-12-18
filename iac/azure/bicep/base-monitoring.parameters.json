@@ -1,0 +1,26 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "eastus2"
+    },
+    "monitoringResourceGroupName": {
+      "value": "monitoring-rg"
+    },
+    "resourceTagging": {
+      "value": {
+        "owner": "your email address here",
+        "product": "demo",
+        "region": "eastus2",
+        "environment": "poc",
+        "platform": "ai",
+        "costCenter": "0001",
+        "businessUnit": "eng",
+        "frameworkId": "ai01",
+        "applicationVersion": "0.0.0.1",
+        "projectName": "demo-platform"
+      }
+    }
+  }
+}

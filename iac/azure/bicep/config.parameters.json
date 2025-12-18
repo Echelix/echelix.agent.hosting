@@ -1,0 +1,253 @@
+{
+  "resourceTagging": {
+    "value": {
+      "owner": "your email address here",
+      "product": "demo",
+      "region": "eastus2",
+      "environment": "poc",
+      "platform": "ai",
+      "costCenter": "0001",
+      "businessUnit": "eng",
+      "frameworkId": "ai01",
+      "applicationVersion": "0.0.0.1",
+      "projectName": "demo-platform"
+    }
+  },
+  "commonParameters": {
+    "location": {
+      "value": "eastus2"
+    },
+    "apiResourceGroupName": {
+      "value": "api-rg"
+    },
+    "networkResourceGroupName": {
+      "value": "network-rg"
+    },
+    "webResourceGroupName": {
+      "value": "ui-rg"
+    },
+    "databaseResourceGroupName": {
+      "value": "database-rg"
+    },
+    "platformResourceGroupName": {
+      "value": "platform-rg"
+    },
+    "monitoringResourceGroupName": {
+      "value": "monitoring-rg"
+    },
+    "aiResourceGroupName": {
+      "value": "ai-rg"
+    },
+    "dnsPrefix": {
+      "value": "aiapi"
+    },
+    "registryName": {
+      "value": "demobetaregistry"
+    }
+  },
+    "aksParameters": {
+    "acrSku": {
+      "value": "Premium"
+    }
+  },
+  "cosmosdbParameters" :{
+    "cosmosDbAccountName" : {
+      "value" : "cosmosdb"
+    },
+    "databaseResourceGroupName": {
+      "value" : "database-rg"
+    },
+    "enableServerless": {
+      "value": true
+    },
+    "privateEndpointEnabled": {
+      "value": false
+    },
+    "enableFreeTier" :{
+        "value" :false
+    },
+    "databaseConfig": {
+      "value": {
+        "databases": [
+          {
+            "name": "agentData",
+            "containers": [
+              {
+                "name": "agents",
+                "partitionKey": "/agentId",
+                "throughput": 400
+              },
+              {
+                "name": "conversations",
+                "partitionKey": "/conversationId",
+                "throughput": 400
+              },
+              {
+                "name": "documents",
+                "partitionKey": "/documentId",
+                "throughput": 400
+              }
+            ]
+          },
+          {
+            "name": "platformData",
+            "containers": [
+              {
+                "name": "users",
+                "partitionKey": "/userId",
+                "throughput": 400
+              },
+              {
+                "name": "configurations",
+                "partitionKey": "/configType",
+                "throughput": 400
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "networkParameters": {
+    "dockerBridgeCIDR": {
+      "value": "172.17.0.1/16"
+    },
+    "serviceCIDR": {
+      "value": "10.0.0.0/16"
+    }
+  }, 
+  "governanceParameters": {
+    "tagPolicyEffect": {
+      "value": "Audit"
+    },
+    "excludedResourceTypes": {
+      "value": []
+    }
+  },  
+  "openaiParameters": {
+    "openAiAccounts": {
+      "value": [
+        {
+          "name": "nonprod",
+          "sku": "S0",
+          "publicNetworkAccess": "Enabled",
+          "models": [ 
+            {
+              "name": "gpt-4.1",
+              "sku": {
+                "name": "GlobalStandard",
+                "capacity": 50
+              },
+              "model": {
+                "format": "OpenAI",
+                "name": "gpt-4.1",
+                "version": "2025-04-14"
+              }
+            },
+            {
+              "name": "gpt-5-chat",
+              "sku": {
+                "name": "GlobalStandard",
+                "capacity": 50
+              },
+              "model": {
+                "format": "OpenAI",
+                "name": "gpt-5-chat",
+                "version": "2025-10-03"
+              }
+            },
+            {
+              "name": "gpt-5.2-chat",
+              "sku": {
+                "name": "GlobalStandard",
+                "capacity": 50
+              },
+              "model": {
+                "format": "OpenAI",
+                "name": "gpt-5.2-chat",
+                "version": "2025-12-11"
+              }
+            }, 
+            {
+              "name": "text-embedding-3-large",
+              "sku": {
+                "name": "Standard",
+                "capacity": 350
+              },
+              "model": {
+                "format": "OpenAI",
+                "name": "text-embedding-3-large",
+                "version": "1"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "aiSearchServiceSettings": {
+      "value": {
+        "aiSearchServiceName": "search",
+        "sku": "standard",
+        "replicaCount": 1,
+        "partitionCount": 1,
+        "hostingMode": "default"
+      }
+    },
+    "formRecognizerSettings": {
+      "value": {
+        "formRecognizerName": "doc-cracking",
+        "sku": "S0",
+        "publicNetworkAccess": "Enabled"
+      }
+    }
+  },
+  "networkDefinition": {
+    "value": [
+      {
+        "name": "ai-network",
+        "id": "networkVnetName",
+        "cidr": "10.227.0.0/16"
+      },
+      {
+        "name": "ai-aks-subnet",
+        "id": "aksSubnetPrefix",
+        "cidr": "10.227.0.0/22"
+      },
+      {
+        "name": "ai-apim-subnet",
+        "id": "apimSubnetPrefix",
+        "cidr": "10.227.4.0/24"
+      },
+      {
+        "name": "ai-aks-lb-subnet",
+        "id": "akslbSubnetPrefix",
+        "cidr": "10.227.5.0/28"
+      },
+      {
+        "name": "platform-subnet",
+        "id": "platformSubnetPrefix",
+        "cidr": "10.227.6.0/24"
+      },
+      {
+        "name": "ai-database-subnet",
+        "id": "dbSubnetPrefix",
+        "cidr": "10.227.7.0/24"
+      },
+      {
+        "name": "ai-aci-subnet",
+        "id": "containerSubnetPrefix",
+        "cidr": "10.227.8.0/24"
+      },
+      {
+        "name": "ai-endpoints-subnet",
+        "id": "endpointSubnetPrefix",
+        "cidr": "10.227.9.0/24"
+      },
+      {
+        "name": "ai-web-subnet",
+        "id": "websiteSubnetPrefix",
+        "cidr": "10.227.10.0/24"
+      }
+    ]
+  }
+}

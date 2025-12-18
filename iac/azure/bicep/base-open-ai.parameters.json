@@ -1,0 +1,101 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "eastus2"
+    },
+    "aiResourceGroupName": {
+      "value": "ai-rg"
+    },
+    "resourceTagging": {
+      "value": {
+        "owner": "your email address here",
+        "product": "demo",
+        "region": "eastus2",
+        "environment": "poc",
+        "platform": "ai",
+        "costCenter": "0001",
+        "businessUnit": "eng",
+        "frameworkId": "ai01",
+        "applicationVersion": "0.0.0.1",
+        "projectName": "demo-platform"
+      }
+    },
+    "openAiAccounts": {
+      "value": [
+        {
+          "name": "nonprod",
+          "sku": "S0",
+          "publicNetworkAccess": "Enabled",
+          "models": [
+            {
+              "name": "gpt-4.1",
+              "sku": {
+                "name": "GlobalStandard",
+                "capacity": 50
+              },
+              "model": {
+                "format": "OpenAI",
+                "name": "gpt-4.1",
+                "version": "2025-04-14"
+              }
+            },
+            {
+              "name": "gpt-5-chat",
+              "sku": {
+                "name": "GlobalStandard",
+                "capacity": 50
+              },
+              "model": {
+                "format": "OpenAI",
+                "name": "gpt-5-chat",
+                "version": "2025-10-03"
+              }
+            },
+            {
+              "name": "gpt-5.2-chat",
+              "sku": {
+                "name": "GlobalStandard",
+                "capacity": 50
+              },
+              "model": {
+                "format": "OpenAI",
+                "name": "gpt-5.2-chat",
+                "version": "2025-12-11"
+              }
+            },
+            {
+              "name": "text-embedding-3-large",
+              "sku": {
+                "name": "Standard",
+                "capacity": 350
+              },
+              "model": {
+                "format": "OpenAI",
+                "name": "text-embedding-3-large",
+                "version": "1"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "aiSearchServiceSettings": {
+      "value": {
+        "aiSearchServiceName": "search",
+        "sku": "standard",
+        "replicaCount": 1,
+        "partitionCount": 1,
+        "hostingMode": "default"
+      }
+    },
+    "formRecognizerSettings": {
+      "value": {
+        "formRecognizerName": "doc-cracking",
+        "sku": "S0",
+        "publicNetworkAccess": "Enabled"
+      }
+    }
+  }
+}
