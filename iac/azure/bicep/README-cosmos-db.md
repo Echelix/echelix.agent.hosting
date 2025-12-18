@@ -8,7 +8,7 @@ This directory contains the Bicep templates and deployment scripts for provision
 - `base-cosmos-db.parameters.json` - Parameters file containing configuration values
 - `modules/database/cosmosdb.bicep` - Core CosmosDB module implementation
 - `modules/database/cosmosdb-containers.bicep` - Container creation module
-- `deployment/ai-platform/6-deploy-cosmos-db.sh` - Deployment script
+- `deployment/ai-platform/3-deploy-cosmos-db.sh` - Deployment script
 
 ## Architecture
 

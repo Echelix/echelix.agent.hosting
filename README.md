@@ -155,7 +155,7 @@ az provider show --namespace Microsoft.CognitiveServices --query "resourceTypes[
    ```bash
    cd iac/azure/bicep
    # Follow the setup instructions in README.md
-   ./deploy-ai.sh
+   ./deployment/ai-platform/1-deploy-ai.sh
    ```
 
    See: [Infrastructure Deployment Guide](iac/azure/bicep/README.md#setup-instructions)

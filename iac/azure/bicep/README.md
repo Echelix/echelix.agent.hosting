@@ -64,7 +64,6 @@ echelix.platform.iac.bicep.azure/
 ├── README-cosmos-db.md              # Cosmos DB deployment documentation
 ├── config.parameters.json           # Global platform configuration
 ├── config.sh                        # Parameter propagation script
-├── deploy-docker-images.sh          # Container image deployment utility
 ├── init.bicep                       # Main orchestration template
 ├── init.parameters.json             # Orchestration parameters
 ├── deployment/                      # Deployment automation
@@ -198,7 +197,6 @@ See [modules/](./modules) for detailed module documentation.
 ### Core Scripts
 
 - **config.sh:** Updates parameter files across all templates for your environment
-- **deploy-docker-images.sh:** Builds and pushes Docker images to Azure Container Registry
 
 ### Deployment Scripts (in deployment/ai-platform/)
 
