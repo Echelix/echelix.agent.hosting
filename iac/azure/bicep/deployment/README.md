@@ -241,7 +241,7 @@ source ~/.bashrc  # or source ~/.zshrc
 
 ---
 
-## � Troubleshooting Guide for Junior Engineers
+## � Troubleshooting Guide
 
 **Learning Mindset**: Every error is a learning opportunity! These are the most common issues and how to solve them step by step.
 
