@@ -1,4 +1,4 @@
-# Demo Platform Monorepo
+# Echelix Agent Hosting Platform Starter
 
 This repository `echelix.agent.hosting` defines base architecture to deliver an Agentic AI platform that enables rapid deployment of AI Agents and services. This platform is a base building block that we utilize to build out eco-systems
 
